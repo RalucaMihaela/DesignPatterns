@@ -9,6 +9,13 @@
 import Foundation
 
 public class QuestionGroup: Codable {
+    // ???????
+    public class Score: Codable {
+        public var correctCount: Int = 0
+        public var incorrectCount: Int = 0
+        public init() {}
+    }
+    
     public let questions: [Question]
     public var score: Score
     public let title: String
@@ -20,10 +27,4 @@ public class QuestionGroup: Codable {
         self.score = score
         self.title = title
     }
-}
-
-public class Score: Codable {
-    public var correctCount: Int = 0
-    public var incorrectCount: Int = 0
-    public init() {}
 }

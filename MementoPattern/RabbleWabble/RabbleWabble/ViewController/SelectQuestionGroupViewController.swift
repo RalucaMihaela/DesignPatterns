@@ -29,6 +29,13 @@ class SelectQuestionGroupViewController: UIViewController, UITableViewDataSource
     
     private let appSettings = AppSettings.shared
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.questionGroups.forEach {
+            print("\($0.title):" + "correctCount \($0.score.correctCount), " + "incorrectCount \($0.score.incorrectCount)")
+        }
+    }
+    
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +62,7 @@ class SelectQuestionGroupViewController: UIViewController, UITableViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let viewController = segue.destination as? QuestionViewController else { return }
-        viewController.questionStrategy = appSettings.questionStrategy(for: selectedQuestionGroup)
+        viewController.questionStrategy = appSettings.questionStrategy(for: self.questionGroupCaretaker)
         viewController.delegate = self
     }
     
