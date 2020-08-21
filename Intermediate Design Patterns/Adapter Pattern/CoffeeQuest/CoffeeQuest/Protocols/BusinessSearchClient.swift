@@ -1,3 +1,5 @@
+// Class created for AdapterPattern
+
 import Foundation
 import MapKit
 

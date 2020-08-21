@@ -4,11 +4,15 @@ import YelpAPI
 public class ViewController: UIViewController {
   
   // MARK: - Properties
-  private var businesses: [YLPBusiness] = []
-  private let client = YLPClient(apiKey: YelpAPIKey)
-  private let locationManager = CLLocationManager()
+
+  // MARK: AdapterPattern
+  public var client: BusinessSearchClient = YLPClient(apiKey: YelpAPIKey)
+  private var businesses: [Bussiness] = []
   
+  // MARK: FactoryPattern
   public let annotationFactory = AnnotationFactory()
+  
+  private let locationManager = CLLocationManager()
   
   // MARK: - Outlets
   
@@ -57,28 +61,27 @@ extension ViewController: MKMapViewDelegate {
     let yelpCoordinate = YLPCoordinate(latitude: coordinate.latitude,
                                        longitude: coordinate.longitude)
     
-    client.search(with: yelpCoordinate,
-                  term: "coffee",
-                  limit: 35,
-                  offset: 0,
-                  sort: .bestMatched) { [weak self] (searchResult, error) in
-      guard let self = self else { return }
-      guard let searchResult = searchResult, error == nil else {
+    client.search(
+      with: mapView.userLocation.coordinate,
+      term: "coffee",
+      limit: 35, offset: 0,
+      success: { [weak self] businesses in
+        guard let self = self else { return }
+
+        self.businesses = businesses
+        DispatchQueue.main.async {
+          self.addAnnotations()
+        }
+      }, failure: { error in
         print("Search failed: \(String(describing: error))")
-        return
-      }
-      self.businesses = searchResult.businesses
-      DispatchQueue.main.async {
-        self.addAnnotations()
-      }
-    }
+      })
   }
+  
+  // MARK: - FactoryPattern
   
   private func addAnnotations() {
     for business in businesses {
-      guard let viewModel = annotationFactory.createBusinessMapViewModel(for: business) else {
-         continue
-      }
+      let viewModel = anotationFactory.createBusinessMapViewModel(for: business)
       mapView.addAnnotation(viewModel)
     }
   }
