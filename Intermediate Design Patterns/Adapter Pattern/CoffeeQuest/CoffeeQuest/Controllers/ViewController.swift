@@ -7,7 +7,7 @@ public class ViewController: UIViewController {
 
   // MARK: AdapterPattern
   public var client: BusinessSearchClient = YLPClient(apiKey: YelpAPIKey)
-  private var businesses: [Bussiness] = []
+  private var businesses: [Business] = []
   
   // MARK: FactoryPattern
   public let annotationFactory = AnnotationFactory()
@@ -81,7 +81,7 @@ extension ViewController: MKMapViewDelegate {
   
   private func addAnnotations() {
     for business in businesses {
-      let viewModel = anotationFactory.createBusinessMapViewModel(for: business)
+      let viewModel = annotationFactory.createBusinessMapViewModel(for: business)
       mapView.addAnnotation(viewModel)
     }
   }
