@@ -1,2 +1,2 @@
 # DesignPatterns
-Going through tutorials from DesignPatterns book
+Going through tutorials from RayWenderlich DesignPatterns book
