@@ -1,0 +1,10 @@
+// Class created for AdapterPattern
+
+import Foundation
+import MapKit
+
+public struct Business {
+  var name: String
+  var rating: Double
+  var location: CLLocationCoordinate2D
+}
