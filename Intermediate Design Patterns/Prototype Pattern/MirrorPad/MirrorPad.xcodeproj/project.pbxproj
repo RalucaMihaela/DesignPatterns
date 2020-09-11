@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17099158250BC72000760CD4 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17099157250BC72000760CD4 /* Copying.swift */; };
 		424387E420449D300056B653 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424387E320449D300056B653 /* DrawView.swift */; };
 		424387E72044A1ED0056B653 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424387E62044A1ED0056B653 /* LineShape.swift */; };
 		42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F35C3520449C9A00584FAD /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17099157250BC72000760CD4 /* Copying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Copying.swift; path = MirrorPad/Copying.swift; sourceTree = SOURCE_ROOT; };
 		424387E320449D300056B653 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		424387E62044A1ED0056B653 /* LineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
 		42F35C3220449C9A00584FAD /* MirrorPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MirrorPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +44,7 @@
 		4245EC792074415400E347D0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				17099157250BC72000760CD4 /* Copying.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17099158250BC72000760CD4 /* Copying.swift in Sources */,
 				42F35C3820449C9A00584FAD /* ViewController.swift in Sources */,
 				424387E72044A1ED0056B653 /* LineShape.swift in Sources */,
 				42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */,
