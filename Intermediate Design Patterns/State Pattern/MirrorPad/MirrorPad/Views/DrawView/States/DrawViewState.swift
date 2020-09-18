@@ -1,0 +1,36 @@
+import Foundation
+import UIKit
+
+public class DrawViewState {
+  
+  // MARK: - Class Properties
+  
+  public class var identifier: AnyHashable {
+    return ObjectIdentifier(self)
+  }
+  
+  // MARK: - Instance Properties
+  
+  public unowned let drawView: DrawView
+  
+  // MARK: - Object Lifecycle
+  
+  public init(drawView: DrawView) {
+    self.drawView = drawView
+  }
+  
+  // MARK: - Actions
+  
+  public func animate() { }
+  public func copyLines(from source: DrawView) { }
+  public func clear() { }
+  public func touchesBegan(_ touches: Set<UITouch>,with event: UIEvent?) { }
+  public func touchesMoved(_ touches: Set<UITouch>,with event: UIEvent?) { }
+  
+  // MARK: - State Management
+  
+  @discardableResult internal func transitionToState(matching identifier: AnyHashable) -> DrawViewState {
+    // TODO: - Implement this
+    return self
+  }
+}
