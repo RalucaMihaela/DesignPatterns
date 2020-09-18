@@ -8,6 +8,14 @@ public class DrawView: UIView {
   public var lineWidth: CGFloat = 5.0
   public var lines: [LineShape] = []
 
+  public lazy var currentState = states[AcceptInputState.identifier]!
+  public lazy var states = [
+    AcceptInputState.identifier: AcceptInputState(drawView: self),
+    AnimateState.identifier: AnimateState(drawView: self),
+    ClearState.identifier: ClearState(drawView: self),
+    CopyState.identifier: CopyState(drawView: self)
+  ]
+  
   @IBInspectable public var scaleX: CGFloat = 1 {
     didSet { applyTransform() }
   }
@@ -23,21 +31,11 @@ public class DrawView: UIView {
   // MARK: - UIResponder
   
   public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    guard let point = touches.first?.location(in: self) else {
-      return
-    }
-    
-    let line = LineShape(color: lineColor, width: lineWidth, startPoint: point)
-    lines.append(line)
-    layer.addSublayer(line)
+    currentState.touchesBegan(touches, with: event)
   }
 
   public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-    guard let point = touches.first?.location(in: self), bounds.contains(point),
-      let currentLine = lines.last else {
-        return
-    }
-    currentLine.addPoint(point)
+    currentState.touchesMoved(touches, with: event)
   }
 
   // MARK: - Actions

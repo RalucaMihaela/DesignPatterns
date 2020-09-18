@@ -30,7 +30,8 @@ public class DrawViewState {
   // MARK: - State Management
   
   @discardableResult internal func transitionToState(matching identifier: AnyHashable) -> DrawViewState {
-    // TODO: - Implement this
-    return self
+    let state = drawView.states[identifier]!
+    drawView.currentState = state
+    return state
   }
 }
