@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17099158250BC72000760CD4 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17099157250BC72000760CD4 /* Copying.swift */; };
 		17114E8725150468003F1AA9 /* AcceptInputState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17114E8625150468003F1AA9 /* AcceptInputState.swift */; };
 		17114E8B25150475003F1AA9 /* AnimateState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17114E8A25150475003F1AA9 /* AnimateState.swift */; };
 		17114E8E25150481003F1AA9 /* ClearState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17114E8D25150481003F1AA9 /* ClearState.swift */; };
 		17114E9125150494003F1AA9 /* CopyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17114E9025150494003F1AA9 /* CopyState.swift */; };
 		17114E94251504A4003F1AA9 /* DrawViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17114E93251504A4003F1AA9 /* DrawViewState.swift */; };
+		177FC5CC25276D5D00DDD397 /* Copying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FC5CA25276D5D00DDD397 /* Copying.swift */; };
+		177FC5CD25276D5D00DDD397 /* MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FC5CB25276D5D00DDD397 /* MulticastDelegate.swift */; };
 		424387E420449D300056B653 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424387E320449D300056B653 /* DrawView.swift */; };
 		424387E72044A1ED0056B653 /* LineShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424387E62044A1ED0056B653 /* LineShape.swift */; };
 		42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F35C3520449C9A00584FAD /* AppDelegate.swift */; };
@@ -23,12 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17099157250BC72000760CD4 /* Copying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Copying.swift; path = MirrorPad/Copying.swift; sourceTree = SOURCE_ROOT; };
 		17114E8625150468003F1AA9 /* AcceptInputState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptInputState.swift; sourceTree = "<group>"; };
 		17114E8A25150475003F1AA9 /* AnimateState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateState.swift; sourceTree = "<group>"; };
 		17114E8D25150481003F1AA9 /* ClearState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearState.swift; sourceTree = "<group>"; };
 		17114E9025150494003F1AA9 /* CopyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyState.swift; sourceTree = "<group>"; };
 		17114E93251504A4003F1AA9 /* DrawViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewState.swift; sourceTree = "<group>"; };
+		177FC5CA25276D5D00DDD397 /* Copying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Copying.swift; path = MirrorPad/Protocols/Copying.swift; sourceTree = SOURCE_ROOT; };
+		177FC5CB25276D5D00DDD397 /* MulticastDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MulticastDelegate.swift; path = MirrorPad/Protocols/MulticastDelegate.swift; sourceTree = SOURCE_ROOT; };
 		424387E320449D300056B653 /* DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		424387E62044A1ED0056B653 /* LineShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineShape.swift; sourceTree = "<group>"; };
 		42F35C3220449C9A00584FAD /* MirrorPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MirrorPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,12 +75,14 @@
 			path = States;
 			sourceTree = "<group>";
 		};
-		4245EC792074415400E347D0 /* Protocols */ = {
+		177FC5C625276CF700DDD397 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				17099157250BC72000760CD4 /* Copying.swift */,
+				177FC5CA25276D5D00DDD397 /* Copying.swift */,
+				177FC5CB25276D5D00DDD397 /* MulticastDelegate.swift */,
 			);
-			path = Protocols;
+			name = Protocols;
+			path = Protocols/Protocols;
 			sourceTree = "<group>";
 		};
 		4245EC7C2074417100E347D0 /* Facades */ = {
@@ -112,7 +116,7 @@
 				42F35C4720449C9D00584FAD /* AppDelegate */,
 				42F35C4820449CA300584FAD /* Controllers */,
 				4245EC7C2074417100E347D0 /* Facades */,
-				4245EC792074415400E347D0 /* Protocols */,
+				177FC5C625276CF700DDD397 /* Protocols */,
 				42F35C4A20449CB400584FAD /* Resources */,
 				42F35C4920449CAA00584FAD /* Views */,
 			);
@@ -228,12 +232,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				17114E8B25150475003F1AA9 /* AnimateState.swift in Sources */,
-				17099158250BC72000760CD4 /* Copying.swift in Sources */,
+				177FC5CC25276D5D00DDD397 /* Copying.swift in Sources */,
 				17114E9125150494003F1AA9 /* CopyState.swift in Sources */,
 				42F35C3820449C9A00584FAD /* ViewController.swift in Sources */,
 				17114E94251504A4003F1AA9 /* DrawViewState.swift in Sources */,
 				17114E8E25150481003F1AA9 /* ClearState.swift in Sources */,
 				424387E72044A1ED0056B653 /* LineShape.swift in Sources */,
+				177FC5CD25276D5D00DDD397 /* MulticastDelegate.swift in Sources */,
 				42F35C3620449C9A00584FAD /* AppDelegate.swift in Sources */,
 				17114E8725150468003F1AA9 /* AcceptInputState.swift in Sources */,
 				424387E420449D300056B653 /* DrawView.swift in Sources */,
